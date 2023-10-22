@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 function PageHeader() {
   const user = {
     name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg'
+    avatar: '/static/images/Poke_Ball_icon.svg.png'
   };
   const theme = useTheme();
 
@@ -24,10 +24,10 @@ function PageHeader() {
       </Grid>
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          Welcome, {user.name}!
+          Pokemon Data Visualization
         </Typography>
         <Typography variant="subtitle2">
-          Today is a good day to start trading crypto assets!
+          Presented by Siyuan Liu
         </Typography>
       </Grid>
     </Grid>

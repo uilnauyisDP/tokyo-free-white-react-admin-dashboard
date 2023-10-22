@@ -18,6 +18,7 @@ import TrendingUp from '@mui/icons-material/TrendingUp';
 import Text from 'src/components/Text';
 import Chart from 'react-apexcharts';
 import type { ApexOptions } from 'apexcharts';
+import * as d3 from "d3";
 
 const AvatarSuccess = styled(Avatar)(
   ({ theme }) => `

@@ -8,12 +8,17 @@ import AccountBalance from './AccountBalance';
 import Wallets from './Wallets';
 import AccountSecurity from './AccountSecurity';
 import WatchList from './WatchList';
+import csv2Json from 'csvtojson';
+import { useState } from 'react';
+import pokemonData from '../../../data/pokemon_data.json'
 
-function DashboardCrypto() {
+function DashboardPokemon() {
+  console.log(pokemonData);
+
   return (
     <>
       <Helmet>
-        <title>Crypto Dashboard</title>
+        <title>Pokemon Dashboard</title>
       </Helmet>
       <PageTitleWrapper>
         <PageHeader />
@@ -45,4 +50,4 @@ function DashboardCrypto() {
   );
 }
 
-export default DashboardCrypto;
+export default DashboardPokemon;

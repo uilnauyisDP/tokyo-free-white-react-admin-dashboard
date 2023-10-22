@@ -25,6 +25,11 @@
       "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/png-transparent-pokemon-logo-pokemon-go-pikachu-logo-ash-ketchum-pokemon-go-text-banner-sign.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
