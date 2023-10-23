@@ -6,12 +6,30 @@ import { max } from "date-fns";
 const MARGIN = { top: 60, right: 40, bottom: 30, left: 40 };
 
 const COLORS = [
-  "#e0ac2b",
-  "#e85252",
-  "#6689c6",
-  "#9a6fb0",
-  "#a53253",
-  "#69b3a2",
+    '#FF0000',
+    '#FF7F00',
+    '#FFD400',
+    '#FFFF00',
+    '#BFFF00',
+    '#6AFF00',
+    '#00EAFF',
+    '#0095FF',
+    '#0040FF',
+    '#AA00FF',
+    '#FF00AA',
+    '#EDB9B9',
+    '#E7E9B9',
+    '#B9EDE0',
+    '#B9D7ED',
+    '#DCB9ED',
+    '#8F2323',
+    '#8F6A23',
+    '#4F8F23',
+    '#23628F',
+    '#6B238F',
+    '#000000',
+    '#737373',
+    '#CCCCCC'
 ];
 
 type ParallelCoordinateProps = {

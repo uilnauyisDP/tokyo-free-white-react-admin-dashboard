@@ -15,6 +15,7 @@ import { pokemonData } from '../../../data/PokemonData';
 import { Sankey } from './Sankey';
 import { string } from 'prop-types';
 import { PieChart } from './PieChart';
+import { Scatterplot } from './Scatterplot';
 
 function DashboardPokemon() {
   return (
@@ -25,7 +26,7 @@ function DashboardPokemon() {
       <PageTitleWrapper>
         <PageHeader />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Container >
         <Grid
           container
           direction="row"
@@ -33,29 +34,37 @@ function DashboardPokemon() {
           alignItems="stretch"
           spacing={4}
         >
-          <Grid item xs={4}>
+          <Grid item xs={2.5}>
             <Box>
               <Typography variant="h2">Sankey diagram</Typography>
               <hr></hr>
               <Typography variant="h5">
-                A Sankey diagram showing the primary types of new Pokemons
-                introduced in each generation
+                A sankey diagram showing the primary types of new Pokemons
+                introduced in each generation.
               </Typography>
-              <Sankey pokemonData={pokemonData} width={300} height={700} />
+              <Sankey pokemonData={pokemonData} width={200} height={600} />
             </Box>
           </Grid>
-          <Grid item lg={8} xs={12}>
+          <Grid item xs={5.5}>
             <Box>
               <Typography variant="h2">Pie Chart</Typography>
               <hr></hr>
               <Typography variant="h5">
                 A pie chart showing the count of the primary types of pokemons in all generations. 
               </Typography>
-              <PieChart pokemonData={pokemonData} width={650} height={450} />
+              <PieChart pokemonData={pokemonData} width={550} height={450} />
             </Box>
           </Grid>
-          <Grid item lg={4} xs={12}>
-            <AccountSecurity />
+          <Grid item xs={4}>
+          <Box>
+              <Typography variant="h2">Scatterplot Chart</Typography>
+              <hr></hr>
+              <Typography variant="h5">
+                A scatterplot Chart showing the distribution of pokemons based on their attack and defense. Y axis is the value of attack and 
+                X axis is the value of defense. The pokemon of same primary type shares the same color.
+              </Typography>
+              <Scatterplot pokemonData={pokemonData} width={650} height={450} />
+            </Box>
           </Grid>
         </Grid>
       </Container>
