@@ -3,6 +3,7 @@ import PageHeader from './PageHeader';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 import { Container, Grid } from '@mui/material';
 import Footer from 'src/components/Footer';
+import { PokemonData } from 'src/data/PokemonData';
 
 import AccountBalance from './AccountBalance';
 import Wallets from './Wallets';
@@ -10,11 +11,11 @@ import AccountSecurity from './AccountSecurity';
 import WatchList from './WatchList';
 import csv2Json from 'csvtojson';
 import { useState } from 'react';
-import pokemonData from '../../../data/pokemon_data.json'
+import { pokemonData } from '../../../data/PokemonData';
+import { Sankey } from './Sankey';
+import { string } from 'prop-types';
 
 function DashboardPokemon() {
-  console.log(pokemonData);
-
   return (
     <>
       <Helmet>
@@ -32,7 +33,7 @@ function DashboardPokemon() {
           spacing={4}
         >
           <Grid item xs={12}>
-            <AccountBalance />
+            <Sankey pokemonData={pokemonData} width={300} height={800} />
           </Grid>
           <Grid item lg={8} xs={12}>
             <Wallets />

@@ -41,8 +41,6 @@ const SidebarLayout: FC<SidebarLayoutProps> = () => {
           }
         }}
       >
-
-        <Sidebar />
         <Box
           sx={{
             position: 'relative',

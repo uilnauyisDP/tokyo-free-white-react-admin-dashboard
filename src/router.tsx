@@ -20,30 +20,11 @@ const Pokemon = Loader(lazy(() => import('src/content/dashboards/Pokemon')));
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <SidebarLayout />,
-    children: [
-      {
-        path: '',
-        element: <Navigate to="dashboards/pokemon" replace />
-      },
-      {
-        path: 'dashboards',
-        children: [
-          {
-            path: '',
-            element: <Navigate to="pokemon" replace />
-          },
-          {
-            path: 'pokemon',
-            element: <Pokemon />
-          }
-        ]
-      },
-      {
-        path: '*',
-        element: <Navigate to="dashboards/pokemon" replace />
-      }
-    ]
+    element: <Pokemon />,
+  },
+  {
+    path: '*',
+    element: <Navigate to="/" replace />
   }
 ];
 
