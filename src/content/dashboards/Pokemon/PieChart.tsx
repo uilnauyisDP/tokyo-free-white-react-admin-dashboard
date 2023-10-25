@@ -87,7 +87,7 @@ export const PieChart = ({ width, height, pokemonData }: PieChartProps) => {
     const inflexionPoint = arcGenerator.centroid(inflexionInfo);
 
     const isRightLabel = inflexionPoint[0] > 0;
-    const labelPosX = inflexionPoint[0] + 50 * (isRightLabel ? 1 : -1);
+    const labelPosX = inflexionPoint[0] + (isRightLabel ? 10 : 15) * (isRightLabel ? 1 : -1);
     const textAnchor = isRightLabel ? 'start' : 'end';
     const label = grp.data.name + ' (' + grp.value + ')';
 
