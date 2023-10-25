@@ -79,7 +79,7 @@ export const PieChart = ({ width, height, pokemonData }: PieChartProps) => {
 
     // Second arc is for the legend inflexion point
     const inflexionInfo = {
-      innerRadius: radius + INFLEXION_PADDING,
+      innerRadius: radius + ((i === pie.length - 1) ? INFLEXION_PADDING + 100 : ((i === pie.length - 2) ? INFLEXION_PADDING + 80 : INFLEXION_PADDING)),
       outerRadius: radius + INFLEXION_PADDING,
       startAngle: grp.startAngle,
       endAngle: grp.endAngle

@@ -34,7 +34,7 @@ function DashboardPokemon() {
           alignItems="stretch"
           spacing={4}
         >
-          <Grid item xs={2.5}>
+          <Grid item xs={12} md={2.5}>
             <Box>
               <Typography variant="h2">Sankey diagram</Typography>
               <hr></hr>
@@ -42,10 +42,10 @@ function DashboardPokemon() {
                 A sankey diagram showing the primary types of new Pokemons
                 introduced in each generation.
               </Typography>
-              <Sankey pokemonData={pokemonData} width={200} height={600} />
+              <Sankey pokemonData={pokemonData} width={200} height={500} />
             </Box>
           </Grid>
-          <Grid item xs={5.5}>
+          <Grid item xs={12} md={5.5}>
             <Box>
               <Typography variant="h2">Pie Chart</Typography>
               <hr></hr>
@@ -55,20 +55,20 @@ function DashboardPokemon() {
               <PieChart pokemonData={pokemonData} width={550} height={450} />
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
           <Box>
               <Typography variant="h2">Scatterplot Chart</Typography>
               <hr></hr>
               <Typography variant="h5">
-                A scatterplot Chart showing the distribution of pokemons based on their attack and defense. Y axis is the value of attack and 
-                X axis is the value of defense. The pokemon of same primary type shares the same color.
+                A scatterplot Chart showing the distribution of pokemons based on their attack and defense. The pokemon of same primary type shares the same color.
               </Typography>
-              <Scatterplot pokemonData={pokemonData} width={650} height={450} />
+              <Box>
+              <Scatterplot pokemonData={pokemonData} width={450} height={450} />
+              </Box>
             </Box>
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 }

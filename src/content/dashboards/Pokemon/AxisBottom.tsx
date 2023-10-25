@@ -30,7 +30,7 @@ export const AxisBottom = ({
   return (
     <>
       {/* Ticks and labels */}
-      {ticks.map(({ value, xOffset }) => (
+      {ticks.map(({ value, xOffset }, index: number) => (
         <g key={value} transform={`translate(${xOffset}, 0)`}>
           <line
             y1={TICK_LENGTH}
@@ -44,11 +44,11 @@ export const AxisBottom = ({
             style={{
               fontSize: "10px",
               textAnchor: "middle",
-              transform: "translateY(20px)",
+              transform: `${index == ticks.length - 1 ? 'translate(20px, 20px)' : 'translateY(20px)'}`,
               fill: "#D2D7D3",
             }}
           >
-            {value}
+            {index == ticks.length - 1 ? `${value}   Defense` : value}
           </text>
         </g>
       ))}

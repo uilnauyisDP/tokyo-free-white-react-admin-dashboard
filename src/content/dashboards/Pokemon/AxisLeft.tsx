@@ -22,31 +22,35 @@ export const AxisLeft = ({ yScale, pixelsPerTick, width }: AxisLeftProps) => {
     }));
   }, [yScale]);
 
+  let isFirst = true;
   return (
     <>
       {/* Ticks and labels */}
-      {ticks.map(({ value, yOffset }) => (
-        <g key={value} transform={`translate(0, ${yOffset})`}>
-          <line
-            x1={-TICK_LENGTH}
-            x2={width + TICK_LENGTH}
-            stroke="#D2D7D3"
-            strokeWidth={0.5}
-            shapeRendering={"crispEdges"}
-          />
-          <text
-            key={value}
-            style={{
-              fontSize: "10px",
-              textAnchor: "middle",
-              transform: "translateX(-20px)",
-              fill: "#D2D7D3",
-            }}
-          >
-            {value}
-          </text>
-        </g>
-      ))}
+      {ticks.map(({ value, yOffset }, index: number) => {
+
+        return (
+          <g key={value} transform={`translate(0, ${yOffset})`}>
+            <line
+              x1={-TICK_LENGTH}
+              x2={width + TICK_LENGTH}
+              stroke="#D2D7D3"
+              strokeWidth={0.5}
+              shapeRendering={"crispEdges"}
+            />
+            <text
+              key={value}
+              style={{
+                fontSize: "10px",
+                textAnchor: "middle",
+                transform:  `translateX(-${index == ticks.length - 1 ? 36 : 20}px)`,
+                fill: "#D2D7D3",
+              }}
+            >
+              {index == ticks.length - 1 ? `Attack ${value}` : value}
+            </text>
+          </g>
+        )
+      })}
     </>
   );
 };
